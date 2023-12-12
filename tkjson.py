@@ -72,5 +72,5 @@ def parseString(source, parent, args={}):
     return TkJsonParser(_parseJson(source, args), parent)
 
 def parseFile(path, parent, args={}):
-    return parseString((readFile(path), parent, args)
+    return parseString(readFile(path), parent, args)
 
