@@ -58,6 +58,8 @@ class TkJsonParser:
 
 
 def _parseJson(source, args={}):
+    true=True
+    false=False
     return eval(source)
 
 def readFile(path):
