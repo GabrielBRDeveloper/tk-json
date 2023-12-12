@@ -5,13 +5,13 @@ class TkJsonParser:
         self._registry = {}
         self._element = self.parse_element(json, parent)
 
-    def getItem(self, id):
+    def getItem(self, id) -> tk.Widget:
         return self._registry[id]
 
-    def getElement(self):
+    def getElement(self) -> tk.Widget:
         return self._element
 
-    def parse_element(self, json, parent):
+    def parse_element(self, json, parent) -> tk.Widget:
         item = None
         blockedKeys = [
             "type", "children", "id", "doLayout"
@@ -63,7 +63,7 @@ def _parseJson(source, args={}):
     return eval(source)
 
 def readFile(path):
-    file = open(path, "r")
+    file = open(path, mode="r",  encoding="utf-8")
     content = file.read()
     file.close()
     return content
