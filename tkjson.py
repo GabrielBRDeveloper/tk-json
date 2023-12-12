@@ -68,7 +68,9 @@ def readFile(path):
     file.close()
     return content
 
+def parseString(source, parent, args={}):
+    return TkJsonParser(_parseJson(source, args), parent)
 
 def parseFile(path, parent, args={}):
-    return TkJsonParser(_parseJson(readFile(path), args), parent)
+    return parseString((readFile(path), parent, args)
 
